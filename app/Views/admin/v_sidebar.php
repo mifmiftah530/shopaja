@@ -62,7 +62,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/tambah_barang" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Tambah Barang</p>
                             </a>
@@ -85,7 +85,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/tambah_kategori" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Tambah Kategori</p>
                             </a>
@@ -98,7 +98,7 @@
                         </li>
                     </ul>
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link">
+                    <a href="/alogout" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <p>Log Out</p>
                     </a>

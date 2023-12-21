@@ -10,6 +10,11 @@
                             <div class="card-header mb-2">
                                 <h3 class="card-title">Kategori</h3>
                             </div>
+                            <?php if (session()->get('success')) : ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?= session()->get('success') ?>
+                                </div>
+                            <?php endif; ?>
 
                             <div class="card-body">
                                 <div class="card">
@@ -56,7 +61,7 @@
                                                     <th style="width: 40px;">Id</th>
                                                     <th>Kategori</th>
                                                     <th>Gambar</th>
-                                                    <th style=" width: 100px;">Aksi</th>
+                                                    <th style=" width: 50px;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -69,14 +74,16 @@
                                                             <td><img style="width: 50px; height: 50px;" src="<?= base_url('kategori/' . $b['gambar']); ?>" alt="Gambar"><br>
                                                                 <small><?= $b['gambar']; ?></small>
                                                             </td>
-                                                            <td><button>
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </button>
+                                                            <td>
+                                                                <a href="<?= base_url('/admin/edit_kategori/edit/' . $b['id_kategori']); ?>" class="btn btn-primary" title="Edit Kategori">
+                                                                    <i class="fas fa-pencil-alt"></i> Edit
+                                                                </a>
 
-                                                                <!-- Tombol Delete dengan Ikon Sampah -->
-                                                                <button>
-                                                                    <i class="fas fa-trash-alt"></i>
-                                                                </button>
+                                                                <form action="<?= base_url('/admin/edit_kategori/hapus/' . $b['id_kategori']); ?>" method="get" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                                    <button type="submit" class="btn btn-danger" title="Hapus Kategori">
+                                                                        <i class="fas fa-trash-alt"></i> Hapus
+                                                                    </button>
+                                                                </form>
                                                             </td>
                                                         </tr>
 

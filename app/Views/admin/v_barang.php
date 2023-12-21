@@ -10,6 +10,11 @@
                             <div class="card-header mb-2">
                                 <h3 class="card-title">Barang</h3>
                             </div>
+                            <?php if (session()->get('success')) : ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?= session()->get('success') ?>
+                                </div>
+                            <?php endif; ?>
 
                             <div class="card-body">
                                 <div class="card">
@@ -84,14 +89,18 @@
                                                                 <small><?= $b['gambar']; ?></small>
                                                             </td>
                                                             <td><small><?= $b['tgl']; ?></small></td>
-                                                            <td><button>
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </button>
+                                                            <td>
+                                                                <a href="<?= base_url('/admin/edit_barang/edit/' . $b['id_barang']); ?>" class="btn btn-primary" title="Edit Barang">
+                                                                    <i class="fas fa-pencil-alt"></i> Edit
+                                                                </a>
 
-                                                                <!-- Tombol Delete dengan Ikon Sampah -->
-                                                                <button>
-                                                                    <i class="fas fa-trash-alt"></i>
-                                                                </button>
+
+                                                                <form action="<?= base_url('/admin/edit_barang/hapus/' . $b['id_barang']); ?>" method="get" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus barang ini?');">
+                                                                    <button type="submit" class="btn btn-danger" title="Hapus Barang">
+                                                                        <i class="fas fa-trash-alt"></i> Hapus
+                                                                    </button>
+                                                                </form>
+
                                                             </td>
                                                         </tr>
 
