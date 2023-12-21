@@ -41,7 +41,7 @@
                                                     <h5 class="card-title mt-2"><b><?= $b['nama_barang']; ?></b></h5>
                                                     <p class="card-text"><small style="color: orange;">Rp. <?= number_format($b['harga'], 0, ',', '.'); ?>,-</small></p>
                                                     <a href="halaman_barang/barang/<?= $b['id_barang']; ?>" class="btn btn-primary">Detail <i class="fas fa-eye"></i></a>
-                                                    <a href="#" class="btn btn-success">Add <i class="fas fa-shopping-cart"></i></a>
+                                                    <!-- <a href="#" class="btn btn-success">Add <i class="fas fa-shopping-cart"></i></a> -->
                                                 </div>
                                             </div>
                                         </div>

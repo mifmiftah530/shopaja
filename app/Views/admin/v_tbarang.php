@@ -65,6 +65,12 @@
                                                     <input type="text" class="form-control" id="gambar" name="gambar">
                                                 </div>
                                             </div>
+                                            <div class="row mb-3">
+                                                <label for="wa" class="col-sm-2 col-form-label">No Whatsapp</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control" id="wa" name="wa">
+                                                </div>
+                                            </div>
                                             <button type="submit" class="btn btn-success">Simpan</button>
                                         </form>
                                     </div>

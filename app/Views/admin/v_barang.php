@@ -66,6 +66,7 @@
                                                     <th>Stok</th>
                                                     <th>Gambar</th>
                                                     <th>Date</th>
+                                                    <th>Wa</th>
                                                     <th style="width: 50px;">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -89,6 +90,7 @@
                                                                 <small><?= $b['gambar']; ?></small>
                                                             </td>
                                                             <td><small><?= $b['tgl']; ?></small></td>
+                                                            <td><small><?= $b['wa']; ?></small></td>
                                                             <td>
                                                                 <a href="<?= base_url('/admin/edit_barang/edit/' . $b['id_barang']); ?>" class="btn btn-primary" title="Edit Barang">
                                                                     <i class="fas fa-pencil-alt"></i> Edit

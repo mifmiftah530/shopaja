@@ -19,7 +19,8 @@
                         <?php $session = session();
                         // Mendapatkan nama user dari sesi
                         $username = $session->get('user_username');
-                        echo $username
+                        $id_user = $session->get('user_id');
+                        echo $username;
                         ?> </a>
                 </div>
             </div>
@@ -50,13 +51,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/profil_saya/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-edit nav-icon"></i>
                                     <p>Profile Saya</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/alamat_saya/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-city nav-icon"></i>
                                     <p>Alamat</p>
                                 </a>

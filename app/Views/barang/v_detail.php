@@ -60,6 +60,10 @@
                                         <a href="#" class="btn btn-primary">
                                             <i class="fas fa-shopping-cart"></i> Beli Sekarang
                                         </a>
+                                        <a href="https://wa.me/<?= $barang['wa']; ?>" class="btn btn-success" target="_blank">
+                                            <i class="fab fa-whatsapp"></i> Hubungi
+                                        </a>
+
                                         <p class="card-text"><small class="text-muted">Dibuat Pada <?= $barang['tgl']; ?></small></p>
                                     </div>
                                 </div>

@@ -67,6 +67,7 @@ class Barang extends BaseController
             'keterangan' => $this->request->getPost('keterangan'),
             'stok' => $this->request->getPost('stok'),
             'gambar' => $this->request->getPost('gambar'),
+            'wa' => $this->request->getPost('wa'),
         ];
 
         $barangModel->insert($data);
@@ -104,6 +105,7 @@ class Barang extends BaseController
             'keterangan' => $this->request->getPost('keterangan'),
             'stok' => $this->request->getPost('stok'),
             'gambar' => $this->request->getPost('gambar'),
+            'wa' => $this->request->getPost('wa'),
         ];
 
         $barangModel->updateBarang($id_barang, $data);
