@@ -99,4 +99,6 @@ class Autoload extends AutoloadConfig
      * @phpstan-var list<string>
      */
     public $helpers = [];
+    public $pagerView = '\CodeIgniter\Pager\Views\default_full';
+    public $perPage = 9;
 }

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Kategori_Model;
+use CodeIgniter\Files\File;
 
 class Kategori extends BaseController
 {
@@ -32,18 +33,27 @@ class Kategori extends BaseController
     }
     public function simpan()
     {
-        // Proses penyimpanan data ke database di sini
+        $gambar = $this->request->getFile('gambar');
+        if ($gambar->isValid() && !$gambar->hasMoved()) {
+            // Pindahkan file ke direktori yang diinginkan
+            $uploadPath = './kategori/'; // Ganti dengan path yang sesuai
+            $gambar->move($uploadPath);
 
 
-        $data = [
-            'nama_kategori' => $this->request->getPost('nama'),
-            'gambar' => $this->request->getPost('gambar'),
-        ];
+            $data = [
+                'nama_kategori' => $this->request->getPost('nama'),
+                'gambar' => $gambar->getName(),
+            ];
 
-        $this->Kategori_Model->insert($data);
+            $this->Kategori_Model->insert($data);
 
-        // Setelah data disimpan, redirect ke halaman lain atau tampilkan pesan berhasil
-        return redirect()->to(base_url('/admin/tambah_kategori'))->with('success', 'Data kategori berhasil disimpan!');
+            // Setelah data disimpan, redirect ke halaman lain atau tampilkan pesan berhasil
+            return redirect()->to(base_url('/admin/tambah_kategori'))->with('success', 'Data kategori berhasil disimpan!');
+        } else {
+            // Jika upload gagal, tampilkan pesan error
+            $error = $gambar->getErrorString();
+            return redirect()->to(base_url('/admin/tambah_kategori'))->with('error', $error);
+        }
     }
     public function hapus($id_kategori)
     {
@@ -53,6 +63,7 @@ class Kategori extends BaseController
     }
     public function edit($id_kategori)
     {
+
         $data = [
             'title' => 'Roda Gila Lamongan',
             'logo' => 'Tambah Data',
@@ -61,17 +72,28 @@ class Kategori extends BaseController
         return view('edit_kat', $data);
     }
 
+
     public function editsimpan()
     {
-        $katModel = new Kategori_Model();
-        $id_kategori = $this->request->getPost('id_kategori');
-        $data = [
-            'nama_kategori' => $this->request->getPost('nama'),
-            'gambar' => $this->request->getPost('gambar'),
-        ];
+        $gambar = $this->request->getFile('gambar');
+        if ($gambar->isValid() && !$gambar->hasMoved()) {
+            // Pindahkan file ke direktori yang diinginkan
+            $uploadPath = './kategori/'; // Ganti dengan path yang sesuai
+            $gambar->move($uploadPath);
+            $katModel = new Kategori_Model();
+            $id_kategori = $this->request->getPost('id_kategori');
+            $data = [
+                'nama_kategori' => $this->request->getPost('nama'),
+                'gambar' => $gambar->getName(),
+            ];
 
-        $katModel->updateKategori($id_kategori, $data);
+            $katModel->updateKategori($id_kategori, $data);
 
-        return redirect()->to(base_url('/admin/edit_kategori'))->with('success', 'Data kategori berhasil diupdate!');
+            return redirect()->to(base_url('/admin/edit_kategori'))->with('success', 'Data kategori berhasil diupdate!');
+        } else {
+            // Jika upload gagal, tampilkan pesan error
+            $error = $gambar->getErrorString();
+            return redirect()->to(base_url('/admin/edit_kategori'))->with('error', $error);
+        }
     }
 }

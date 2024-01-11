@@ -37,7 +37,7 @@ $routes->get('/admin/edit_kategori/hapus/(:num)', 'Kategori::hapus/$1');
 $routes->add('/login/admin', 'AdminController::index');
 $routes->post('admin/login', 'AdminController::login');
 $routes->get('/alogout', 'AdminController::logout');
-//logi nuser
+//login user
 $routes->add('/login/user', 'UserController::index');
 $routes->post('user/login', 'UserController::login');
 $routes->get('/ulogout', 'UserController::logout');
@@ -50,3 +50,30 @@ $routes->post('/profil/editsimpan', 'User::editsimpan');
 //edit alamat
 $routes->get('/alamat_saya/(:segment)', 'User::alamat/$1');
 $routes->post('/profil/alamatsimpan', 'User::alamatsimpan');
+//ganti pw
+$routes->add('/gantipw/(:segment)', 'UserController::gantipw/$1');
+$routes->add('/process-gantipw', 'UserController::gpw');
+//keranjang
+$routes->add('/tambah-keranjang/(:num)', 'Barang::tambahKeKeranjang/$1');
+$routes->get('keranjang/(:num)', 'Keranjang::index/$1');
+//update data keranjang
+$routes->post('keranjang/update_jumlah', 'Barang::update_jumlah');
+//hapus keranjang
+$routes->get('keranjang/delete/(:num)', 'Barang::hapus_keranjang/$1');
+//cekout
+$routes->add('checkout/(:num)', 'Cekout::index/$1');
+$routes->post('checkout/proses_pesanan', 'Cekout::proses_pesanan');
+//
+$routes->get('/bayar/(:num)', 'Transaksi::index/$1');
+$routes->get('/diterima/(:num)', 'Transaksi::selesai/$1');
+
+$routes->post('/konfirmasi_bayar', 'Transaksi::konfirmasiPembayaran');
+$routes->post('/pesananditerima', 'Transaksi::pesananditerima');
+
+$routes->get('/admin/status', 'Transaksi::status');
+$routes->post('/konfirmasi/(:num)', 'Transaksi::konfirmasi/$1');
+
+$routes->get('/admin/laporan', 'Transaksi::laporan');
+$routes->post('/cari', 'Barang::cari');
+
+$routes->post('/contact', 'Pages::contact');

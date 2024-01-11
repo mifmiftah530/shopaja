@@ -4,16 +4,22 @@ namespace App\Controllers;
 
 use App\Models\Barang_Model;
 use App\Models\Kategori_Model;
+use App\Models\Transaksi_Model;
+use App\Models\Status_Model;
 
 class Admin extends BaseController
 {
     protected $Barang_Model;
+    protected $statusModel;
+    protected $transaksiModel;
     protected $Kategori_Model;
     protected $Profil;
     public function __construct()
     {
         $this->Barang_Model = new Barang_Model();
         $this->Kategori_Model = new Kategori_Model();
+        $this->transaksiModel = new Transaksi_Model();
+        $this->statusModel = new Status_Model();
     }
     public function index(): string
     {

@@ -14,7 +14,14 @@
                 <img src="<?= base_url('tmp/dist/img/user2-160x160.jpg'); ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">M. Miftah Fatkhul Ulum</a>
+                <a href="#" class="d-block">
+                    <?php $session = session();
+                    // Mendapatkan nama user dari sesi
+                    $username = $session->get('admin_username');
+                    $id_admin = $session->get('admin_id');
+                    echo $username;
+                    ?>
+                </a>
             </div>
         </div>
 
@@ -28,35 +35,11 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            Profile
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="profil/<?php //$profil['id']; 
-                                            ?>" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
-                                <p>Profile Saya</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-wrench nav-icon"></i>
-                                <p>Kelola Akun</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-cart-plus"></i>
                         <p>
-                            Barang
+                            Kelola Barang
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -79,7 +62,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>
-                            Kategori
+                            Kelola Kategori
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -97,6 +80,30 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tag"></i>
+                        <p>
+                            Kelola Pesanan
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/status" class="nav-link">
+                                <i class="fas fa-edit nav-icon"></i>
+                                <p>Update Status</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/laporan" class="nav-link">
+                                <i class="fas fa-print nav-icon"></i>
+                                <p>Laporan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="/alogout" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>

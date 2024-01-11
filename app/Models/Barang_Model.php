@@ -40,4 +40,36 @@ class Barang_Model extends Model
 
         return $result;
     }
+    public function getBarangById($id)
+    {
+        return $this->find($id);
+    }
+
+    public function updateJumlah($id, $jumlah)
+    {
+        $data = [
+            'stok' => $this->getBarangById($id)['stok'] - $jumlah,
+        ];
+
+        $this->set($data);
+        $this->where('id_barang', $id);
+        $this->update();
+    }
+
+    public function cariBarang($keyword)
+    {
+        // Pastikan $keyword adalah string sebelum menggunakan metode like
+        if ($keyword !== null) {
+            return $this->table('barang')
+                ->like('nama_barang', $keyword)
+                ->findAll();
+        } else {
+            return []; // Atau sesuaikan dengan logika penanganan jika $keyword null
+        }
+    }
+    public function getBarangPaginated($page)
+    {
+        return $this->orderBy('id_barang', 'DESC')
+            ->paginate(9, 'default', $page);
+    }
 }

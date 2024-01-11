@@ -104,10 +104,10 @@
             <div class="col-md-2">
                 <h4 class="section-subtitle">Ikuti Kami</h4>
                 <ul class="social-media-icons">
-                    <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook"></i> Roda Gila Store</a></li>
-                    <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Roda Gila Store</a></li>
-                    <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i> Roda Gila Store</a></li>
-                    <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i> Roda Gila Store</a></li>
+                    <li><a href="https://facebook.com/groups/1944701572347460/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i> Roda Gila Store</a></li>
+                    <li><a href="https://www.instagram.com/rodagila_lamonganpunk?igsh=M2FqbWV4NWlxNGpt" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Roda Gila Store</a></li>
+                    <!-- <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i> Roda Gila Store</a></li>
+                    <li><a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i> Roda Gila Store</a></li> -->
                 </ul>
             </div>
             <div class="col-md-3">

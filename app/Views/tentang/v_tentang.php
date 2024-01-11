@@ -55,7 +55,7 @@
                                             <p>Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau membutuhkan bantuan:</p>
                                             <ul class="contact-list">
                                                 <li><i class="fas fa-envelope"></i> Email: info@rodagilastore.com</li>
-                                                <li><i class="fas fa-phone"></i> Telepon: (021) 1234-5678</li>
+                                                <li><i class="fas fa-phone"></i> Telepon: (+62) 85790330322</li>
                                                 <li><i class="fas fa-map-marker-alt"></i> Alamat: Ds. Rodok Gila, Kec. Pucuk, Kab. Lamongan</li>
                                             </ul>
 

@@ -35,9 +35,9 @@
                         <i class="fas fa-search"></i>
                     </a>
                     <div class="navbar-search-block">
-                        <form class="form-inline">
+                        <form class="form-inline" action="<?= base_url('/cari'); ?>" method="post">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" name="keyword" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -50,17 +50,19 @@
                         </form>
                     </div>
                 </li>
+
+
                 <?php if (session()->has('user_id')) : ?>
                     <!-- Messages Dropdown Menu -->
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <i class="far fa-comments"></i>
                             <span class="badge badge-danger navbar-badge">1</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <a href="#" class="dropdown-item">
-                                <!-- Message Start -->
-                                <div class="media">
+                            <a href="#" class="dropdown-item"> -->
+                    <!-- Message Start -->
+                    <!-- <div class="media">
                                     <img src="<?= base_url('tmp/dist/img/user8-128x128.jpg'); ?>" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                     <div class="media-body">
                                         <h3 class="dropdown-item-title">
@@ -70,16 +72,16 @@
                                         <p class="text-sm">I got your message bro</p>
                                         <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                     </div>
-                                </div>
-                                <!-- Message End -->
-                                <div class="dropdown-divider"></div>
+                                </div> -->
+                    <!-- Message End -->
+                    <!-- <div class="dropdown-divider"></div>
                                 <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                             </a>
                         </div>
-                    </li>
+                    </li> -->
 
                     <!-- Notifications Dropdown Menu -->
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <i class="far fa-bell"></i>
                             <span class="badge badge-warning navbar-badge">15</span>
@@ -104,10 +106,10 @@
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                         </div>
-                    </li>
+                    </li> -->
 
                     <!-- Keranjang Belanja Dropdown Menu -->
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <i class="fas fa-shopping-cart"></i>
                             <span class="badge badge-warning navbar-badge">1</span>
@@ -120,8 +122,8 @@
                             </a>
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item dropdown-footer">Lihat Semua Daftar Belanja</a>
-                        </div>
-                    </li>
+                        </div> -->
+                    <!-- </li> -->
                 <?php else : ?>
 
                 <?php endif; ?>

@@ -23,7 +23,7 @@
                                         <h3 class="card-title"><?= $logo; ?></h3>
                                     </div>
                                     <div class="card-body">
-                                        <form action="<?= base_url('/barang/simpan') ?>" method="post">
+                                        <form action="<?= base_url('/barang/simpan') ?>" method="post" enctype="multipart/form-data">
                                             <div class="row mb-3">
                                                 <label for="nama" class="col-sm-2 col-form-label">Nama Barang</label>
                                                 <div class="col-sm-10">
@@ -62,13 +62,13 @@
                                             <div class="row mb-3">
                                                 <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="gambar" name="gambar">
+                                                    <input name="gambar" class="form-control" type="file" id="gambar">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="wa" class="col-sm-2 col-form-label">No Whatsapp</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" class="form-control" id="wa" name="wa">
+                                                    <input type="number" class="form-control" id="wa" name="wa" required>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-success">Simpan</button>

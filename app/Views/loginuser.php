@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login User</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,8 +67,12 @@
 
 <body>
 
+
     <form action="<?= base_url('user/login'); ?>" method="post">
         <h1>Login User</h1>
+        <?php if (session()->has('success')) : ?>
+            <p><?= session('success') ?></p>
+        <?php endif; ?>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>

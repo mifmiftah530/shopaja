@@ -6,6 +6,11 @@ use App\Models\User_Model;
 
 class UserController extends BaseController
 {
+    protected $User_Model;
+    public function __construct()
+    {
+        $this->User_Model = new User_Model();
+    }
     public function index()
     {
         return view('loginuser');
@@ -78,6 +83,41 @@ class UserController extends BaseController
         $model->insert($data);
 
         // Redirect ke halaman login atau halaman lain yang sesuai
-        return redirect()->to('/register')->with('success', 'Registrasi berhasil. Silakan login.');
+        return redirect()->to('/login/user')->with('success', 'Registrasi berhasil. Silakan login.');
+    }
+    public function gantipw($id_user)
+    {
+        $data = [
+            'title' => 'Roda Gila Lamongan',
+            'logo' => 'Ganti Password',
+            'user' => $this->User_Model->getUser($id_user)
+        ];
+        return view('gantipw', $data);
+    }
+
+    public function gpw()
+    {
+        $userModel = new User_Model();
+        $id_user = $this->request->getVar('id_user');
+        $passwordLama = $this->request->getVar('password_lama');
+        $newPassword = $this->request->getVar('password');
+
+        // Ambil password lama dari database
+        $userData = $userModel->getUser($id_user);
+        $currentPassword = $userData['password'];
+
+        // Periksa apakah password lama sesuai dengan yang ada di database
+        if ($currentPassword !== md5($passwordLama)) {
+            return redirect()->to(base_url("/gantipw/{$id_user}"))->with('error', 'Password lama tidak valid.');
+        }
+
+        // Periksa apakah password lama sama dengan password baru
+        if (md5($newPassword) === $currentPassword) {
+            return redirect()->to(base_url("/gantipw/{$id_user}"))->with('error', 'Password baru harus berbeda dengan password lama.');
+        }
+        // Update password baru
+        $userModel->updatePassword($id_user, $newPassword);
+
+        return redirect()->to(base_url("/gantipw/{$id_user}"))->with('success', 'Password berhasil diupdate.');
     }
 }

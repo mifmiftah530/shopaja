@@ -22,35 +22,22 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-body row">
-                <div class="col-5 text-center d-flex align-items-center justify-content-center">
+                <div class="col-12 d-flex flex-column align-items-center text-center mb-3">
+                    <!-- WhatsApp Logo and Button -->
+                    <a href="https://wa.me/6285790330322" target="_blank">
+                        <img src="/img/wa.png" alt="WhatsApp Logo" width="300" height="300"><br>
+                        <button class="btn btn-success mx-auto">Chat on WhatsApp</button>
+                    </a>
+                </div>
+                <div class="col-12 text-center d-flex align-items-center justify-content-center">
                     <div class="">
                         <h2><strong>Roda Gila Store</strong></h2>
                         <p class="lead mb-5">Alamat: Ds. Rodok Gila, Kec. Pucuk, Kab. Lamongan<br>
-                            Telepon: (021) 1234-5678
+                            Telepon: (+62) 85790330322
                         </p>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="form-group">
-                        <label for="inputName">Name</label>
-                        <input type="text" id="inputName" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">E-Mail</label>
-                        <input type="email" id="inputEmail" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="inputSubject">Subject</label>
-                        <input type="text" id="inputSubject" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="inputMessage">Message</label>
-                        <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Send message">
-                    </div>
-                </div>
+
             </div>
         </div>
 

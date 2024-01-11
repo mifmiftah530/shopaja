@@ -34,7 +34,7 @@
                                             <div class="row mb-3">
                                                 <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" value="<?= $kategori['gambar']; ?>" class="form-control" id="gambar" name="gambar">
+                                                    <input type="file" value="<?= $kategori['gambar']; ?>" class="form-control" id="gambar" name="gambar">
                                                 </div>
                                             </div>
                                             <input type="hidden" name="id_kategori" value="<?= $kategori['id_kategori']; ?>">

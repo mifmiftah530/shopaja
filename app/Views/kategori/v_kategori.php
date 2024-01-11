@@ -24,6 +24,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <?php if (session()->getFlashdata('success')) : ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <?= session()->getFlashdata('success') ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                     <div class="card card-primary">
                         <div class="card-header mb-2">
                             <h3 class="card-title"><?= $nama; ?></h3>
@@ -43,7 +51,20 @@
                                                     <p class="card-text"><small style="color: orange;">Rp. <?= number_format($b['harga'], 0, ',', '.'); ?>,-</small></p>
                                                     <!-- Menggunakan base_url() untuk link -->
                                                     <a href="<?= base_url('halaman_barang/barang/' . $b['id_barang']); ?>" class="btn btn-primary">Detail <i class="fas fa-eye"></i></a>
-                                                    <a href="#" class="btn btn-success">Add <i class="fas fa-shopping-cart"></i></a>
+                                                    <form action="<?= base_url('/tambah-keranjang/' . $b['id_barang']); ?>" method="post">
+                                                        <div class="input-group mt-2">
+                                                            <?php if (session()->has('user_id')) : ?>
+
+                                                                <input type="number" name="jumlah" class="form-control" value="1" min="1">
+                                                                <input type="hidden" name="id_barang" value="<?= $b['id_barang']; ?>">
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-success btn-sm" type="submit">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                                                                </div>
+                                                            <?php else : ?>
+
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

@@ -3,7 +3,8 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link bg-orange">
         <img src="<?= base_url('tmp/dist/img/AdminLTELogo.png'); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light"><b><?= $title; ?></b></span>
+        <span class="brand-text font-weight-light"><b><?= $title;
+                                                        ?></b></span>
     </a>
 
     <!-- Sidebar -->
@@ -63,7 +64,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/gantipw/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-wrench nav-icon"></i>
                                     <p>Kelola Akun</p>
                                 </a>
@@ -87,33 +88,22 @@
                         </a>
                         <ul class="nav nav-treeview bg-grey">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/keranjang/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-shopping-cart nav-icon"></i>
                                     <p>Keranjang Saya</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/bayar/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-money-check nav-icon"></i>
                                     <p>Bayar Sekarang</p>
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-car nav-icon"></i>
-                                    <p>Pengiriman</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/diterima/<?= $id_user; ?>" class="nav-link">
                                     <i class="fas fa-home nav-icon"></i>
                                     <p>Selesai Dikirim</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-star nav-icon"></i>
-                                    <p>Ranting</p>
                                 </a>
                             </li>
                         </ul>
@@ -143,7 +133,7 @@
                 <?php else : ?>
                     <!-- Jika belum login -->
                     <li class="nav-item">
-                        <a href="login/user" class="nav-link">
+                        <a href="/login/user" class="nav-link">
                             <i class="nav-icon fas fa-lock"></i>
                             <p>
                                 Login

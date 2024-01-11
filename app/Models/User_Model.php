@@ -27,4 +27,12 @@ class User_Model extends Model
         }
         return $result;
     }
+    public function updatePassword($id_user, $newPassword)
+    {
+        $data = [
+            'password' => md5($newPassword),
+        ];
+
+        $this->update($id_user, $data);
+    }
 }
